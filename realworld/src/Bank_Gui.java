@@ -145,25 +145,6 @@ public class Bank_Gui extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // public int[] read() {
-
-    // try {
-    // withdraw1 = Integer.parseInt(withdraw.getText());
-    // deposit1 = Integer.parseInt(deposit.getText());
-
-    // } catch (NumberFormatException e) {
-    // System.out.println(e.getMessage());
-    // }
-    // int[] arr = new int[2];
-    // arr[0] = deposit1;
-    // arr[1] = withdraw1;
-
-    // System.out.println("balance is" + withdraw1);
-    // System.out.println("arr" + arr[0]);
-    // return arr;
-
-    // }
-
     public void write(int newValue) {
         String s = String.valueOf(newValue);
         remain.setText(s);
@@ -173,12 +154,12 @@ public class Bank_Gui extends javax.swing.JFrame {
         // TODO add your handling code here:
         int withdraw1 = Integer.parseInt(withdraw.getText());
         int deposit1 = Integer.parseInt(deposit.getText());
-        Read read = new Read(deposit1,withdraw1, remain);
-        Write write = new Write( deposit1,withdraw1, remain);
+        Read read = new Read(withdraw1, deposit1, remain);
+        Write write = new Write(deposit1, withdraw1, remain);
         Thread t1 = new Thread(read);
         Thread t2 = new Thread(write);
-         t1.start();
-         t2.start();
+        t1.start();
+        t2.start();
 
     }// GEN-LAST:event_submitActionPerformed
 
