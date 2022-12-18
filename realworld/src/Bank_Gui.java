@@ -154,7 +154,7 @@ public class Bank_Gui extends javax.swing.JFrame {
         // TODO add your handling code here:
         int withdraw1 = Integer.parseInt(withdraw.getText());
         int deposit1 = Integer.parseInt(deposit.getText());
-        Read read = new Read(withdraw1, deposit1, remain);
+        Read read = new Read(deposit1,withdraw1, remain);
         Write write = new Write(deposit1, withdraw1, remain);
         Thread t1 = new Thread(read);
         Thread t2 = new Thread(write);
